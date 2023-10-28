@@ -1,7 +1,5 @@
 import './globals.css';
 import Navbar from './components/Navbar/index';
-import Footer from './components/Footer/index';
-
 
 export const metadata = {
   title: 'Geoapp',
@@ -18,7 +16,6 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
-        {/* <Footer /> */}
       </body>
     </html>
   )
