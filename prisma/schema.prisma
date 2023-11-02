@@ -1,0 +1,30 @@
+// Prisma schema for CockroachDB
+
+// Define your data source with the CockroachDB connection details
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+// Define the generator for the Prisma client
+generator client {
+  provider = "prisma-client-js"
+  output   = "./client"
+}
+
+// Define your data model
+model data {
+  id              BigInt      @id @default(autoincrement())
+  project         String
+  date            DateTime
+  category        String
+  gcs_path        String
+  geoserver_layer String
+}
+
+// Define your data model
+model project {
+  id              BigInt      @id @default(autoincrement())
+  project         String
+}
+

@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  # this service should use the web image after you build it
+  # web:
+  #   # image: next-nginx:dev
+  #   build: 
+  #     context: .
+  #   ports:
+  #     - "3000:80"
+  #   environment:
+  #     NODE_ENV: development
+  #     DATABASE_URL: postgres://youruser:yourpassword@cockroachdb:26257/mydb
+
+  cockroachdb:
+    image: cockroachdb/cockroach:latest
+    ports:
+      - "26257:26257"  # Expose the SQL API port
+      - "8082:8080"    # Expose the Admin UI
+    hostname: mycdb
+    volumes:
+      # - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - cockroach-data:/cockroach/cockroach-data
+    env_file:
+      - ./.env
+    command: start-single-node --insecure
+
+volumes:
+  cockroach-data:

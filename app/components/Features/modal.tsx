@@ -96,6 +96,9 @@ const MyModal: React.FC<ModalProps> = ({ isOpen, closeModal, exitModal, data }) 
                                                             id="file-input"
                                                             type="file"
                                                             onChange={onFileChange}
+                                                            // webkitdirectory=""
+                                                            // directory=""
+                                                            // multiple
                                                         />
                                                         
                                                     </div>

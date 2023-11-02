@@ -35,21 +35,22 @@ const Navbar = () => {
                     <div className="relative flex h-20 items-center justify-between">
                         <div className="flex flex-1 items-center sm:items-stretch sm:justify-start">
 
-                            {/* LOGO */}
-
-                            <div className="flex flex-shrink-0 items-center">
-                                <img
-                                    className="block h-12 w-40 lg:hidden"
-                                    src={'/assets/logo/logo.svg'}
-                                    alt="geoapp-logo"
-                                />
-                                <img
-                                    className="hidden h-full w-full lg:block"
-                                    src={'/assets/logo/logo.svg'}
-                                    alt="geoapp-logo"
-                                />
+                           {/* LOGO */}
+                           <div className="flex flex-shrink-0 items-center">
+                                <Link href="/"> {/* Wrap the logo with a Link component */}
+                                        <img
+                                            className="block h-12 w-40 lg:hidden"
+                                            src={'/assets/logo/logo.svg'}
+                                            alt="geoapp-logo"
+                                        />
+                                        <img
+                                            className="hidden h-full w-full lg:block"
+                                            src={'/assets/logo/logo.svg'}
+                                            alt="geoapp-logo"
+                                        />
+                                </Link>
                                 <h3 className="text-2xl sm:text-3xl font-semibold text-black text-center my-3">
-                                Geoapp
+                                    Geoapp
                                 </h3>
                             </div>
 

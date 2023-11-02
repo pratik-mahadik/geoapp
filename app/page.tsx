@@ -1,8 +1,11 @@
+"use client"
 import Features from './components/Features/index';
+import {NextUIProvider} from "@nextui-org/react";
 
 
 export default function Home() {
   return (
+    <NextUIProvider>
     <main>
       {/* <Banner /> */}
       {/* <People /> */}
@@ -11,5 +14,6 @@ export default function Home() {
       {/* <Payment /> */}
       {/* <Pricing /> */}
     </main>
+    </NextUIProvider>
   )
 }
